@@ -1,6 +1,6 @@
 {
   "name": "@atlascommunity/ra-data-provider",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is simple react-admin dataProvider implementation for internal needs.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
