@@ -5,12 +5,12 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
     return {
         getOne: (resource, params) => {
             return axios
-                .get(`${apiUrl}/rest/risk-management/1.0/${resource}/${params.id}`)
+                .get(`${apiUrl}/${resource}/${params.id}`)
                 .then(val => val.data);
 
         },
         getList: (resource, params) => {
-            return axios.get(`${apiUrl}/rest/risk-management/1.0/${resource}`,
+            return axios.get(`${apiUrl}/${resource}`,
                 {
                     params: {
                         page: params.pagination.page,
@@ -22,7 +22,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         getMany: (resource, params) => {
-            return axios.get(`${apiUrl}/rest/risk-management/1.0/${resource}/many`,
+            return axios.get(`${apiUrl}/${resource}/many`,
                 {
                     params: {
                         ids: JSON.stringify(params.ids)
@@ -30,7 +30,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         getManyReference(resource, params) {
-            return axios.get(`${apiUrl}/rest/risk-management/1.0/${resource}/refs/${params.target}/${params.id}`,
+            return axios.get(`${apiUrl}/${resource}/refs/${params.target}/${params.id}`,
                 {
                     params: {
                         page: params.pagination.page,
@@ -41,7 +41,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         update: (resource, params) => {
-            return axios.put(`${apiUrl}/rest/risk-management/1.0/${resource}/${params.id}`,
+            return axios.put(`${apiUrl}/${resource}/${params.id}`,
                 params.data,
                 {
                     headers: {
@@ -50,7 +50,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         updateMany: (resource, params) => {
-            return axios.put(`${apiUrl}/rest/risk-management/1.0/${resource}`,
+            return axios.put(`${apiUrl}/${resource}`,
                 params.data,
                 {
                     headers: {
@@ -62,7 +62,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         create: (resource, params) => {
-            return axios.post(`${apiUrl}/rest/risk-management/1.0/${resource}`,
+            return axios.post(`${apiUrl}/${resource}`,
                 params.data,
                 {
                     headers: {
@@ -71,7 +71,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         delete: (resource, params) => {
-            return axios.delete(`${apiUrl}/rest/risk-management/1.0/${resource}/${params.id}`,
+            return axios.delete(`${apiUrl}/${resource}/${params.id}`,
                 {
                     headers: {
                         'Content-type': 'application/json',
@@ -79,7 +79,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
                 }).then(val => val.data);
         },
         deleteMany: (resource, params) => {
-            return axios.delete(`${apiUrl}/rest/risk-management/1.0/${resource}`,
+            return axios.delete(`${apiUrl}/${resource}`,
                 {
                     headers: {
                         'Content-type': 'application/json',
