@@ -25,7 +25,7 @@ export const jiraDataProvider = (apiUrl: string): DataProvider => {
             return axios.get(`${apiUrl}/${resource}/many`,
                 {
                     params: {
-                        ids: JSON.stringify(params.ids)
+                        ids: params.ids
                     }
                 }).then(val => val.data);
         },
